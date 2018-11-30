@@ -15,59 +15,64 @@
                   android:paddingLeft="8dp"
                   android:paddingRight="8dp"
                   android:orientation="horizontal"
-                  android:gravity="center">
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-           >
-
-        <TextView
+                  android:gravity="center" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                  android:layout_marginRight="8dp">
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="journée"
-        app:layout_constraintBottom_toTopOf="@+id/numberPicker0"/>
+                android:orientation="vertical"
+        >
 
-        <NumberPicker
-                android:id="@+id/numberPicker0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/jour"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    </LinearLayout>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="journée"
+                    app:layout_constraintBottom_toTopOf="@+id/numberPicker0"/>
 
-    <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent"
-            android:paddingLeft="@dimen/marge_frags"
-            app:layout_constraintRight_toRightOf="parent">
+            <NumberPicker
+                    android:id="@+id/numberPicker0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/jour"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+        </LinearLayout>
 
-        <ImageView
-                android:id="@+id/image"
-                android:layout_width="77dp"
-                android:layout_height="77dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/jour"
-                android:src="@drawable/sanstitre"
-        />
-        <fragment
-                android:id="@+id/debut_fragment"
-                class="com.example.azna.huitres.DebutFragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/marge_frags"
+                app:layout_constraintRight_toRightOf="parent">
 
-        <fragment
-                android:id="@+id/fin_fragment"
-                class="com.example.azna.huitres.FinFragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/jour"
+                    android:src="@drawable/sanstitre"
+            />
+            <FrameLayout
+                    android:id="@+id/firstpane"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+            </FrameLayout>
+
+            <FrameLayout
+                    android:id="@+id/secondpane"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+            </FrameLayout>
 
 
             <Button
@@ -77,6 +82,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
             />
-    </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

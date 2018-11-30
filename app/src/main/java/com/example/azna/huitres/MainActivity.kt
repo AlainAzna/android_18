@@ -16,9 +16,10 @@ import kotlinx.android.synthetic.main.fragment_fin.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    companion object {
+        val jour_depart :Int=333
+    }
     val jours = Array<String>(365,{i:Int->(i+1).toString()})
-    val heures= Array<String>(24,{i:Int->i.toString()})
-    val minutes = Array<String>(60,{i:Int->i.toString()})
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,23 +40,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         numberPicker0.minValue=0
         numberPicker0.maxValue=jours.size-1
         numberPicker0.displayedValues=jours
-        numberPicker0.value=333
-        numberPicker1.minValue=0
-        numberPicker1.maxValue=heures.size -1
-        numberPicker1.displayedValues = heures
-        numberPicker1.value=8
-        numberPicker2.minValue=0
-        numberPicker2.maxValue=minutes.size -1
-        numberPicker2.displayedValues = minutes
-        numberPicker2.value=0
-        numberPicker3.minValue=0
-        numberPicker3.maxValue=heures.size -1
-        numberPicker3.displayedValues = heures
-        numberPicker3.value=8
-        numberPicker4.minValue=0
-        numberPicker4.maxValue=minutes.size -1
-        numberPicker4.displayedValues = minutes
-        numberPicker4.value=0
+        numberPicker0.value= jour_depart
+        supportFragmentManager.beginTransaction()
+            .add(R.id.firstpane,DebutFragment())
+            .commit()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.secondpane,FinFragment())
+            .commit()
+
+
 
 
         nav_view.setNavigationItemSelectedListener(this)
@@ -93,11 +86,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_gallery -> {
 
+
             }
             R.id.nav_slideshow -> {
 
             }
             R.id.nav_manage -> {
+
 
             }
             R.id.nav_share -> {
