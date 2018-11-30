@@ -8,4 +8,5 @@
     <dimen name="linear2">25dp</dimen>
     <dimen name="bouton">30dp</dimen>
     <dimen name="jour">-65dp</dimen>
+    <dimen name="marge_frags">20dp</dimen>
 </resources>
