@@ -43,8 +43,8 @@ class FinFragment : Fragment() {
 
         // Inflate the layout for this fragment
 
-
-        return inflater.inflate(R.layout.fragment_fin, container, false)
+        return view
+//        return inflater.inflate(R.layout.fragment_fin, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

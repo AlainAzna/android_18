@@ -47,8 +47,9 @@ class DebutFragment : Fragment(){
         nPicker2.value=0
 
 
-        return inflater.inflate(R.layout.fragment_debut, container, false)
-    }
+        return view
+//        inflater.inflate(R.layout.fragment_debut, container, false)
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

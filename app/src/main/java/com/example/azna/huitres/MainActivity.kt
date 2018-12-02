@@ -41,12 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         numberPicker0.maxValue=jours.size-1
         numberPicker0.displayedValues=jours
         numberPicker0.value= jour_depart
-        supportFragmentManager.beginTransaction()
-            .add(R.id.firstpane,DebutFragment())
-            .commit()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.secondpane,FinFragment())
-            .commit()
+
 
 
 
@@ -81,7 +76,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
+                R.id.nav_camera -> {
+
+                    supportFragmentManager.beginTransaction()
+                    .add(R.id.firstpane,DebutFragment())
+                    .commit()
                 // Handle the camera action
             }
             R.id.nav_gallery -> {
@@ -89,6 +88,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_slideshow -> {
+
+                supportFragmentManager.beginTransaction()
+                .add(R.id.secondpane,FinFragment())
+                .commit()
 
             }
             R.id.nav_manage -> {
