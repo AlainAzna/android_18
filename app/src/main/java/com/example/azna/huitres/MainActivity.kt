@@ -11,13 +11,12 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_debut.*
-import kotlinx.android.synthetic.main.fragment_fin.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     companion object {
         val jour_depart :Int=333
+        val BUNDLE_PICKER0="value picker0"
     }
     val jours = Array<String>(365,{i:Int->(i+1).toString()})
 
@@ -41,11 +40,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         numberPicker0.maxValue=jours.size-1
         numberPicker0.displayedValues=jours
         numberPicker0.value= jour_depart
-
-
-
-
-
         nav_view.setNavigationItemSelectedListener(this)
     }
 
@@ -108,5 +102,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putInt(BUNDLE_PICKER0,numberPicker0.value)
+    }
+
+    override fun onRestoreInstanceState(inState: Bundle?) {
+        super.onRestoreInstanceState(inState)
+        if (inState!=null){
+        numberPicker0.value=inState.getInt(BUNDLE_PICKER0)}
     }
 }

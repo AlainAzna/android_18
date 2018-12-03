@@ -25,7 +25,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class DebutFragment : Fragment(){
 
-    private var i=0
+    val BUNDLE_PICKER1= "value picker1"
+    val BUNDLE_PICKER2= "value picker2"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,4 +57,17 @@ class DebutFragment : Fragment(){
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState?.putInt(BUNDLE_PICKER1, numberPicker1.value)
+        outState?.putInt(BUNDLE_PICKER2, numberPicker2.value)
+    }
+
+    override fun onViewStateRestored(inState: Bundle?) {
+        super.onViewStateRestored(inState)
+        if (inState!=null){
+            numberPicker1.value = inState.getInt(BUNDLE_PICKER1)
+            numberPicker2.value = inState.getInt(BUNDLE_PICKER2)
+        }
+    }
 }

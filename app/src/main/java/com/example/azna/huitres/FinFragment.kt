@@ -21,7 +21,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class FinFragment : Fragment() {
 
-    private var i=0
+    val BUNDLE_PICKER3= "value picker3"
+    val BUNDLE_PICKER4= "value picker4"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,5 +51,18 @@ class FinFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState?.putInt(BUNDLE_PICKER3, numberPicker3.value)
+        outState?.putInt(BUNDLE_PICKER4, numberPicker4.value)
+    }
+
+    override fun onViewStateRestored(inState: Bundle?) {
+        super.onViewStateRestored(inState)
+        if (inState!=null){
+            numberPicker3.value = inState.getInt(BUNDLE_PICKER3)
+            numberPicker4.value = inState.getInt(BUNDLE_PICKER4)
+        }
     }
 }
