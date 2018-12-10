@@ -1,5 +1,6 @@
 package com.example.azna.huitres
 
+import android.annotation.TargetApi
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -11,15 +12,18 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import java.time.LocalDate
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     companion object {
-        val jour_depart :Int=333
+        val jour_depart :Int= 344
         val BUNDLE_PICKER0="value picker0"
     }
     val jours = Array<String>(365,{i:Int->(i+1).toString()})
 
+//    val aujour = LocalDate.now()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
