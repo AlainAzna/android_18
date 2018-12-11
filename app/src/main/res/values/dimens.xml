@@ -7,6 +7,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="linear2">25dp</dimen>
     <dimen name="bouton">30dp</dimen>
-    <dimen name="jour">-65dp</dimen>
+    <dimen name="jour">25dp</dimen>
     <dimen name="marge_frags">20dp</dimen>
+    <dimen name="image">77dp</dimen>
 </resources>

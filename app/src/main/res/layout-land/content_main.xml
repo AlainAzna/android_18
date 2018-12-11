@@ -15,23 +15,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/jour"
             android:src="@drawable/sanstitre"
-            app:layout_constraintBottom_toTopOf="@+id/jour"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/jour"
-                    android:text=" journée"
-                    app:layout_constraintBottom_toTopOf="@+id/numberPicker0"/>
+            app:layout_constraintBottom_toTopOf="@+id/zeropane"/>
+    <FrameLayout
+            android:id="@+id/zeropane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <NumberPicker
-                    android:id="@+id/numberPicker0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/jour"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
 
-                    app:layout_constraintTop_toTopOf="parent"/>
+    </FrameLayout>
 
 
     <FrameLayout
@@ -50,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
-            app:layout_constraintLeft_toRightOf="@id/numberPicker0">
+          >
     </FrameLayout>
 
 

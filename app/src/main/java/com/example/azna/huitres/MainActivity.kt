@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     companion object {
         val jour_depart :Int= 344
-        val BUNDLE_PICKER0="value picker0"
+
     }
-    val jours = Array<String>(365,{i:Int->(i+1).toString()})
+
 
 //    val aujour = LocalDate.now()
 
@@ -40,10 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
-        numberPicker0.minValue=0
-        numberPicker0.maxValue=jours.size-1
-        numberPicker0.displayedValues=jours
-        numberPicker0.value= jour_depart
+
         nav_view.setNavigationItemSelectedListener(this)
     }
 
@@ -77,8 +74,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.nav_camera -> {
 
                     supportFragmentManager.beginTransaction()
-                    .add(R.id.firstpane,DebutFragment())
-                    .commit()
+                        .add(R.id.firstpane,DebutFragment())
+                        .commit()
                 // Handle the camera action
             }
             R.id.nav_gallery -> {
@@ -97,6 +94,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_share -> {
+                supportFragmentManager.beginTransaction()
+                .add(R.id.zeropane,ZeroFragment())
+                .commit()
 
             }
             R.id.nav_send -> {
@@ -108,14 +108,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
-        outState?.putInt(BUNDLE_PICKER0,numberPicker0.value)
-    }
 
-    override fun onRestoreInstanceState(inState: Bundle?) {
-        super.onRestoreInstanceState(inState)
-        if (inState!=null){
-        numberPicker0.value=inState.getInt(BUNDLE_PICKER0)}
-    }
 }
