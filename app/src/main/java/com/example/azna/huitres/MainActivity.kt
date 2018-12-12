@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_share -> {
                 supportFragmentManager.beginTransaction()
-                .add(R.id.zeropane,ZeroFragment())
+                .replace(R.id.zeropane,ZeroFragment())
                 .commit()
 
             }

@@ -13,7 +13,12 @@
             android:text="journée"
             android:layout_marginBottom="@dimen/image"
                 />
-
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:ems="10"
+            android:hint="Select Date..."/>
 
 
     <NumberPicker

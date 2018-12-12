@@ -1,6 +1,7 @@
 package com.example.azna.huitres
 
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.NumberPicker
 
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_zero.*
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,7 +32,19 @@ class ZeroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Inflate the layout for this fragment
+        val c=Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month=c.get(Calendar.MONTH)
+        val jour=c.get(Calendar.DAY_OF_MONTH)
+        val pickerDialog=DatePickerDialog(activity,
+            DatePickerDialog.OnDateSetListener{
+                view,year,monthOfYear,dayOfMonth->
+                var dt=(""+dayOfMonth+"/"+(monthOfYear+1)+"/"+year)
+                date.setText(dt)
+            },year,month,jour)
+        pickerDialog.show()
+
+
         return inflater.inflate(R.layout.fragment_zero, container, false)
     }
 
